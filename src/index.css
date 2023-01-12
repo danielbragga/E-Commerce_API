@@ -25,7 +25,7 @@ img {
 .button {
   border: none;
   outline: none;
-  background: #764abc;
+  background: #0e4e5e;
   padding: 5px 10px;
   color: #fff;
   border-radius: 5px;
@@ -35,7 +35,8 @@ img {
 }
 
 .button:hover {
-  background: #513282;
+  background: #26aea3;
+  color: rgb(0, 0, 0);
 }
 
 .heading {
@@ -60,4 +61,20 @@ img {
   margin-bottom: 20px;
   padding: 14px;
   border-radius: 5px;
+}
+.btn {
+  border: none;
+  outline: none;
+  background: #0e4e5e;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #ec685e;
+  color: rgb(0, 0, 0);
 }

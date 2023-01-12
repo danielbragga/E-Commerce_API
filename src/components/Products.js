@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { add } from "../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../store/productSlice";
+import { STATUSES } from "../store/productSlice";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -23,13 +24,21 @@ const Products = () => {
     dispatch(add(product));
   };
 
+  if (status === STATUSES.LOADING) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (status === STATUSES.ERROR) {
+    return <h2>Something went wrong! </h2>;
+  }
+
   return (
     <div className="products">
       {products.map((product) => (
         <div className="card" key={product.id}>
           <img src={product.image} alt=""></img>
           <h4>{product.title}</h4>
-          <h5>{product.price}</h5>
+          <h5>$ {product.price}</h5>
           <button onClick={() => handleAdd(product)} className="button">
             {" "}
             Add to Cart
