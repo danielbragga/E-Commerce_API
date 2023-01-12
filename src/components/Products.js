@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { add } from "../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../store/productSlice";
@@ -18,6 +18,7 @@ const Products = () => {
       setProducts(data);
     };
     fetchProducts(); */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleAdd = (product) => {
